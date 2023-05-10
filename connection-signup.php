@@ -1,4 +1,6 @@
   <?php 
+    //  include('Signup-Form.php');
+
         $firstName = $_POST['firstname'];
         $lastName = $_POST['lastname'];
         $email = $_POST['email'];
@@ -6,7 +8,7 @@
 
 
         //Connection to the Database .. 
-        $connection = new mysqli('localhost','root','123','Registration'); 
+        $connection = new mysqli('localhost','root','123','crud'); 
         if($connection -> connect_error){
             die("Connection Failed: ".$connection->connect_error);
         }
@@ -17,12 +19,15 @@
             $data ->bind_param("ssss",$firstName,$lastName,$email,$password);
             // Execute() prepare statement
             $data->execute();
-            echo "Sign-Up Successfully";
+            echo "<script>alert('Sign-Up Successfully')</script>";
             // close the statements
             $data->close();
             $connection->close();
         }
 
-
+        
 
         ?>
+
+
+<!-- CRUD // Create Replace Update Delete // -->
