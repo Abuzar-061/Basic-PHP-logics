@@ -5,7 +5,7 @@ $password = $_POST['password'];
 
 // Database Connection
 
-$connection = new mysqli("localhost","root","123","crud");
+$connection = new mysqli("localhost","root","","crud");
 
 if($connection->connect_error){
     die("Failed to connect : ".$connection->connect_error);
