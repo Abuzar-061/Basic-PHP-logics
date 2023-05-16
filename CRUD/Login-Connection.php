@@ -11,7 +11,7 @@ if($connection->connect_error){
     die("Failed to connect : ".$connection->connect_error);
 }
 else{
-    $data = $connection->prepare("SELECT * from customer where email = ?");
+    $data = $connection->prepare("SELECT * from register where email = ?");
     $data->bind_param("s",$email);
     $data->execute();
     $data_result = $data->get_result();
